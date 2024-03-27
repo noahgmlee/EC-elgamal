@@ -1,5 +1,4 @@
 ELEC 473 Assignment 2 Option 1: Elliptic Curve ElGamal Encryption
-Noah Lee 20107203
 
 Source Code:
 
