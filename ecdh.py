@@ -23,10 +23,6 @@ def intToPT(PTasInt):
     PTasHex = PTasHex[2:]
     return codecs.decode(codecs.decode(PTasHex,'hex'),'utf-8')
 
-def splitPTasStr(PT):
-    firstpart, secondpart = PT[:len(PT)//2], PT[len(PT)//2:]
-    return [firstpart, secondpart]
-
 
 #pick an eliptic curve
 #Using secp160k1 from https://neuromancer.sk/std/secg/secp160k1
