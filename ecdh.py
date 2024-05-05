@@ -31,7 +31,7 @@ Ord = 0x0100000000000000000001b8fa16dfab9aca16b6b3
 decrypter_private_key = random.getrandbits(160)
 while (decrypter_private_key > Ord):
     decrypter_private_key = random.getrandbits(160)
-decrypter_public_key = doubleAndAdd(G[0], G[1], decrypter_private_key, a, b, p)
+decrypter_public_key = doubleAndAdd(G[0], G[1], decrypter_private_key, a, p)
 
 encrypter_random_key = random.getrandbits(160)
 while (encrypter_random_key > Ord):
@@ -49,12 +49,11 @@ while PT != "exit":
                                decrypter_public_key,
                                pt_to_point(PTasInt, a, b, p),
                                a,
-                               b,
                                p))
     print(CT)
     input("hit enter when ready to decrypt")
     DecipherText = []
     for point in CT:
-        Decipher = decrypt_data(decrypter_private_key, point, a, b, p, G, Ord)
+        Decipher = decrypt_data(decrypter_private_key, point, a, p)
         DecipherText.append(intToPT(Decipher))
     print(DecipherText)
